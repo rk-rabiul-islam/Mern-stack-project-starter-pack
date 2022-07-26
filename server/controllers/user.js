@@ -127,7 +127,7 @@ export const deleteUser = async (req, res, next) =>{
 }
 
 /**
- * @access login users
+ * @access Registeruser users
  * @route /api/user
  * @method Post
  * 

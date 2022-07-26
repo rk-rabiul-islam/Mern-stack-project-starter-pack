@@ -7,10 +7,10 @@ import { authHandler } from "../middlewares/authHandler.js";
 const Router = express.Router();
 
 // all get routers
-Router.route('/').get(getAllUser).post(createUser);
+Router.route('/').get(getAllUser).post(  authHandler, createUser);
 
 // all routes with :id
-Router.route('/:id').get(getSingleUser).put(authHandler, updateUser).patch(authHandler, updateUser).delete( authHandler, deleteUser);
+Router.route('/:id').get( authHandler, getSingleUser).put(  authHandler, updateUser).patch( authHandler, updateUser).delete( authHandler, deleteUser);
 
 // User login And Register
 Router.route('/register').post(registerUser);
