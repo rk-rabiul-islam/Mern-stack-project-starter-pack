@@ -68,9 +68,9 @@ export const createStudent = async (req, res, next) =>{
         const student = await Student.create({...req.body, password : hash_pass});
         res.status(201).json(student);
     
-        } catch (error) {
+    } catch (error) {
             next(error);
-        }
+    }
 }
 
 /**
@@ -188,7 +188,7 @@ export const deleteStudent = async (req, res, next) =>{
         }
 
         // Create token For User
-        const token = jwt.sign({ id : loginUserData._id, isAdmin : loginUserData.isAdmin }, process.env.SERVER_SECRET);
+        const token = jwt.sign({ id : loginUserData._id, userType : loginUserData.userType, isAdmin : loginUserData.isAdmin }, process.env.SERVER_SECRET);
 
         const { _id, password, isAdmin, trash, status, ...userInFo } = loginUserData._doc;
 

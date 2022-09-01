@@ -41,6 +41,10 @@ const studentModels = mongoose.Schema({
         type        : String,
         default     : "avator.png",
     },
+    userType : {
+        type        : String,
+        default     : 'student'
+    },
     isAdmin : {
         type        : Boolean,
         default     : false

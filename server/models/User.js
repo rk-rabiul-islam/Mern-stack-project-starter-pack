@@ -9,28 +9,23 @@ const userModels = mongoose.Schema({
     },
     username : {
         type        : String,
-        required    : [true, "UserName is Required"],
-        unique      : true,
         trim        : true
     },
     email : {
         type        : String,
-        required    : [true, "Email is Required"],
-        unique      : true,
         trim        : true
     },
     cell : {
         type        : String,
-        required    : [true, "Cell is Required"],
-        unique      : true,
         trim        : true
     },
     age : {
-        type        : Number,
+        type        : String,
         required    : true
     },
     gender : {
         type        : String,
+        required    : true
     },
     password : {
         type        : String,
@@ -40,6 +35,14 @@ const userModels = mongoose.Schema({
     photo : {
         type        : String,
         default     : "avator.png",
+    },
+    userType : {
+        type        : String,
+        default     : 'user'
+    },
+    isVerified : {
+        type        : Boolean,
+        default     : false
     },
     isAdmin : {
         type        : Boolean,
